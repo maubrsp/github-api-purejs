@@ -1,0 +1,29 @@
+<% var header =	require("inline-html-withimg-loader!./header")  %>
+<% var embed =	require("inline-html-withimg-loader!./embed")  %>
+<% var production =	htmlWebpackPlugin.options.production  %>
+<% var currentHash = htmlWebpackPlugin.options.currentHash  %>
+<% var url = htmlWebpackPlugin.options.url  %>
+<% var libs_url =	htmlWebpackPlugin.options.libs_url  %>
+<% var images_url =	htmlWebpackPlugin.options.images_url  %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <%=header({ patch: images_url})%>
+    <body>
+        <main>
+        </main>
+    </div>
+    <%= embed(
+        { 
+            fileName: htmlWebpackPlugin.options.chunks , 
+            production: production,
+            hash: currentHash , 
+            libs_url: libs_url 
+        }
+    ) %>
+    <div class="error-modal"></div>
+    <div class="loader"><div></div><div></div><div></div><div></div></div>
+</body>
+            
+</html>
+    

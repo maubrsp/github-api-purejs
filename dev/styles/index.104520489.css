@@ -1,0 +1,396 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400, 900);
+#main {
+  height: auto;
+  width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+a,
+address,
+b,
+big,
+blockquote,
+body,
+center,
+cite,
+code,
+dd,
+del,
+div,
+dl,
+dt,
+em,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+label,
+legend,
+li,
+ol,
+p,
+pre,
+small,
+span,
+strong,
+u,
+ul {
+  font-family: Source Sans Pro, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+em {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: none;
+}
+table {
+  border-collapse: collapse;
+}
+input,
+textarea {
+  outline: none;
+}
+textarea {
+  resize: none;
+  overflow: auto;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  min-height: 30px;
+  padding: 6vh 8vw 2vh;
+  background-color: #fcdb00;
+  z-index: 99;
+}
+nav .header-border {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: -1px;
+  left: 0;
+  background-color: #232527;
+}
+.header-menu {
+  display: block;
+  float: right;
+  padding-top: 16px;
+}
+.header-menu li,
+.header-menu li a {
+  display: inline-block;
+  position: relative;
+}
+.header-menu li a {
+  color: #232527;
+  font-size: 25px;
+  font-weight: 900;
+  padding-left: 2vw;
+}
+.header-menu li .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+.header-menu li .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+footer {
+  padding: 0 8vw;
+}
+footer .footer-container {
+  position: relative;
+}
+footer .footer-container address {
+  font-style: normal;
+  width: 28%;
+  display: inline-block;
+  text-align: left;
+  line-height: 130px;
+}
+footer .footer-container address span {
+  display: block;
+  line-height: 16px;
+  font-size: @fontSize5;
+}
+footer .footer-container address .address-title {
+  margin-bottom: 6px;
+}
+footer .footer-container address .address-email {
+  margin: 10px 0;
+}
+footer .footer-container .footer-links {
+  width: 70%;
+  float: right;
+  display: block;
+  line-height: 130px;
+}
+footer .footer-container .footer-links ul {
+  float: left;
+  display: block;
+  width: 24.2%;
+}
+footer .footer-container .footer-links ul li {
+  display: block;
+  line-height: 28px;
+  text-align: left;
+}
+footer .footer-container .footer-links ul li a {
+  position: relative;
+  color: #fff;
+  font-size: @fontSize5;
+}
+footer .footer-container .footer-links ul li a .button-line {
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  height: 1.8px;
+  width: 0;
+  background-color: #fcdb00;
+}
+footer .footer-container .footer-links ul li a .mouse-area {
+  position: absolute;
+  top: 0;
+  left: -6px;
+  bottom: -6px;
+  right: -6px;
+  background-color: hsla(0, 0%, 59%, 0);
+}
+html {
+  font-family: Source Sans Pro;
+}
+.area {
+  min-height: 100vh;
+  width: 100%;
+  padding: 60px 6vw 0;
+}
+.area-yellow {
+  color: #232527;
+  background-color: #fcdb00;
+  padding-top: 150px;
+}
+.area-yellow svg {
+  fill: #232527;
+}
+.area-yellow article section {
+  padding: 0 3vw;
+}
+.area-yellow article section div {
+  width: 50%;
+  padding-top: 15vh;
+  color: #232527;
+}
+.area-yellow article section div h2 {
+  padding: 20px 0;
+  font-size: @fontSize1;
+}
+.area-yellow article section div h4 {
+  padding: 20px 0;
+  font-size: @fontSize;
+  font-weight: 400;
+}
+.area-yellow article section div p {
+  font-size: @fontSize4;
+}
+.area-yellow article section div .stores {
+  width: 100%;
+  margin-left: -8px;
+  padding-top: 5vh;
+}
+.area-yellow article section div .stores svg {
+  height: 50px;
+  width: 70px;
+}
+.area-yellow .tablet-tynione {
+  position: absolute;
+  height: 445px;
+  width: 300px;
+  top: 30vh;
+  right: 9vw;
+}
+.area-yellow .tablet-tynione .tablet-ilustration {
+  height: 100%;
+}
+.area-yellow .tablet-tynione .brand {
+  position: absolute;
+  top: 205px;
+  left: 60px;
+}
+.area-yellow .tablet-tynione .brand h1 {
+  color: #fcdb00;
+}
+.area-white {
+  color: #232527;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 15vh;
+}
+.area-white h3 {
+  font-size: @fontSize1;
+}
+.area-white p {
+  font-size: @fontSize4;
+  padding: 15px 8vw;
+}
+.area-black {
+  color: #fff;
+  background-color: #232527;
+  text-align: center;
+  padding-top: 15vh;
+}
+.area-black svg {
+  fill: #fcdb00;
+}
+.area-black h3 {
+  font-size: @fontSize1;
+  color: #fcdb00;
+}
+.area-black p {
+  font-size: @fontSize4;
+  padding: 15px 8vw;
+  color: #929292;
+}
+.area-black .botton-email {
+  padding: 30px 8vw;
+  position: relative;
+}
+.area-black .botton-email input {
+  padding: 0 15px;
+  width: 82%;
+  margin-right: 2%;
+}
+.area-black .botton-email button,
+.area-black .botton-email input {
+  height: 48px;
+  border: none;
+  border-radius: 7px;
+  font-size: @fontSize4;
+  outline: none;
+}
+.area-black .botton-email button {
+  width: 15%;
+  padding: 0 18px;
+  background-color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.area-black .botton-email button .txt-effect {
+  pointer-events: none;
+  z-index: 1;
+}
+.area-black .botton-email button .bg-effect {
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 102%;
+  top: -1%;
+  background-color: #fcdb00;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+.area-black .botton-email button:hover {
+  background-color: #fcdb00;
+}
+.brand {
+  height: 60px;
+  width: 195px;
+  line-height: 60px;
+}
+.brand,
+.brand svg {
+  display: inline-block;
+}
+.brand svg {
+  fill: #929292;
+  height: 100%;
+  width: 60px;
+}
+.brand h1,
+.brand span {
+  display: block;
+  line-height: 60px;
+  padding-left: 10px;
+  padding-top: 0;
+  font-size: @fontSize1;
+  float: right;
+}
+.social-buttons {
+  padding: 10vh 0;
+}
+.social-buttons a {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+.social-buttons a svg {
+  height: 36px;
+  pointer-events: none;
+  width: 50px;
+}
+.list-features {
+  padding-top: 5vh;
+  display: block;
+  text-align: center;
+}
+.list-features section {
+  float: left;
+  width: 33%;
+  display: block;
+  text-align: left;
+  padding: 2%;
+}
+.list-features section svg {
+  height: 38px;
+  width: 16%;
+}
+.list-features section div {
+  float: right;
+  width: 80%;
+  padding: 0;
+}
+.list-features section div h4 {
+  font-size: @fontSize4;
+  display: block;
+  padding: 0 0 10px;
+}
+.list-features section div p {
+  display: block;
+  font-size: @fontSize6;
+  padding: 0;
+  color: #929292;
+}

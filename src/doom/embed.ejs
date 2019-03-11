@@ -1,0 +1,99 @@
+<% var params = templateParams %> <% var fname = params.fileName %> <% var fhash
+= params.hash %> <% var flibs_url = params.libs_url %> <% var fproduction =
+params.production %>
+
+<script type="text/javascript">
+
+  window.app = {};
+
+  function deviceDetectorInitializer(){
+      const ua = navigator.userAgent.toLowerCase();
+      const result = { browser: '', type: 'tv, mobile, desktop' };
+      if (/(tv|smartv)/.test(ua)) result['type'] = 'tv';
+      else if (
+        /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(
+          ua
+        )
+      )
+        result['type'] = 'tablet';
+      else if (
+        /(mobi|ipod|phone|blackberry|opera mini|fennec|minimo|symbian|psp|nintendo ds|archos|skyfire|puffin|blazer|bolt|gobrowser|iris|maemo|semc|teashark|uzard)/.test(
+          ua
+        )
+      )
+        result['type'] = 'phone';
+      else if (/(crawl|googlebot|screenshot)/.test(ua)) result['type'] = 'robo';
+      else result['type'] = 'desktop';
+      result['browser'] = ua;
+      return result;
+    }
+
+
+      var deps = <%= "'" + fname + "'" %>
+      var hash = <%= "'" + fhash + "'" %>
+      var libs_url = './';
+      var minWidth = 650;
+      var device = deviceDetectorInitializer();
+      var isMobile = device.type === "phone";
+
+      window.deviceData = {
+        device: device,
+        isMobile: isMobile
+      }
+
+    //   <%= "'" + flibs_url + "'" %>
+      var production = <%= "'" + fproduction + "'" %>
+      deps = deps.split(',')
+      function loadCommons(){
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = libs_url + 'libs/'+deps[0]+"." + hash + ".js"
+          script.onload = loadScript;
+          document.body.appendChild(script);
+      }
+      function loadScript() {
+          for (var i = 0; i < deps.length; i++) {
+              if(deps[i] !== "common"){
+                  var script = document.createElement('script');
+                  script.type = 'text/javascript';
+                  if(isMobile === true ){
+                      script.src = libs_url + 'libs/'+deps[i]+".mobile." + hash + ".js"
+                  }else{
+                      script.src = libs_url + 'libs/'+deps[i]+"." + hash + ".js"
+                  }
+                  document.body.appendChild(script);
+              }
+          }
+          for (var i = 0; i < deps.length; i++) {
+              if(deps[i] !== "common"){
+                  var script = document.createElement('link');
+                  script.type = 'text/css';
+                  if( isMobile === true ){
+                      script.href = libs_url + 'styles/'+deps[i]+".mobile." + hash + ".css"
+                  }else{
+                      script.href = libs_url +'styles/'+deps[i]+"." + hash + ".css"
+                  }
+                  script.rel = "stylesheet";
+                  document.body.appendChild(script);
+              }
+          }
+      }
+
+      /**
+       * Verify and implement poliffils
+       * */
+      function checkEs6(){
+
+          if(window.Promise){
+              loadCommons();
+          }else{
+              var script = document.createElement('script');
+              script.type = 'text/javascript';
+              script.src = libs_url + 'libs/es6-promise.min.js'
+              script.onload = loadCommons;
+              document.body.appendChild(script);
+          }
+      }
+
+      window.onload = checkEs6;
+</script>
