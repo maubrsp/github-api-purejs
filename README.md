@@ -2,7 +2,7 @@
 
 This is a 2016 (DEPRECATED) build and development config for pure javascript static outputs with lazy load
 
-This example load data from Dog API and edit text over image
+This example load data from gitHub API
 
 ## How to run
 

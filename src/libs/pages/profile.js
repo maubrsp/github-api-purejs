@@ -2,10 +2,8 @@ import { getUserProfile } from '../core/services';
 
 export function createProfilePage(routerData) {
   return new Promise((resolve, reject) => {
-    // const loader = window.app.getElement('loader');
     getUserProfile(routerData.profile)
       .then(res => {
-        console.log('init page Profile', res);
         const profileItens = [];
         //número de seguidores, número de seguidos, imagem do avatar, e-mail e bio
         profileItens.push(getProfileIten('bio', res.bio));

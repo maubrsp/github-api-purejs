@@ -1,14 +1,11 @@
 import { getUserRepositories } from '../core/services';
-import { selectOne } from 'css-select';
 
 window.applicationCache.profileReposData = null;
 
 export function createProfileReposPage(routerData) {
   return new Promise((resolve, reject) => {
-    // const loader = window.app.getElement('loader');
     getUserRepositories(routerData.profile)
       .then(res => {
-        console.log('init page ProfileRepos', res);
         //Eu, como usuário, desejo ver a listagem dos repositórios desse usuário que foi buscado, ordenados pelo número decrescente de estrelas;
         // Eu, como usuário, desejo poder alterar a ordem da listagem de repositórios;
         window.applicationCache.profileReposData = res;

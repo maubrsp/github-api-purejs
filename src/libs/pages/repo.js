@@ -2,13 +2,9 @@ import { getRepoDetail } from '../core/services';
 
 export function createRepoPage(routerData) {
   return new Promise((resolve, reject) => {
-    // const loader = window.app.getElement('loader');
-    // /'maubrsp/behaviorProjectPatern'
     let repoUrl = '';
     getRepoDetail(routerData.repo)
       .then(res => {
-        console.log('init page Repo', res);
-
         const repoItens = [];
         //(nome, descrição, ,número de estrelas, linguagem e um link externo para a página do repositório no GitHub)
         repoItens.push(getRepoIten('nome', res.name));
@@ -74,10 +70,7 @@ const addListeners = repoUrl => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const elements = getRepoDomElement();
-      console.log('repo url', repoUrl);
-
       elements.button.addEventListener('click', event => {
-        console.log('repo url', repoUrl);
         window.open(repoUrl, '_blank');
       });
       resolve();

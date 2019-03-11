@@ -37,7 +37,6 @@ export function activateRoutes() {
 }
 
 const routeManager = routerData => {
-  console.log(' >> ', routerData);
   if (window.app.currentPage) {
     showloader()
       .then(res => {
